@@ -1,0 +1,95 @@
+:root {
+  --background-color: #171D2C;
+  --secondary-color: #00B4D8;
+  --primary-color: #90E0EF;
+  --tertiary-color: #CAF0F8;
+  --background-white: #F7FBFF;
+
+}
+
+html {
+  font-size: 10px;
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  background-color: var(--background-color);
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 4rem;
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+}
+
+.nav-button > a {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.tasks-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  height: 4rem;
+  background-color: var(--primary-color);
+  border: 0;
+  border-radius: 2rem;
+}
+
+.tasks-banner > p {
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
