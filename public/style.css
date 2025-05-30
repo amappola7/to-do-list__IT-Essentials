@@ -4,7 +4,14 @@
   --primary-color: #90E0EF;
   --tertiary-color: #CAF0F8;
   --background-white: #F7FBFF;
+  --grey: #ebeef1;
 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -13,9 +20,7 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background-color: var(--background-white);
 }
 
 a {
@@ -43,6 +48,8 @@ li {
   align-items: center;
   width: 25rem;
   background-color: var(--background-color);
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 4rem;
 }
 
 .nav-buttons {
@@ -90,6 +97,144 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   align-items: center;
   width: 100%;
+}
+
+.task-card  {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background-color: var(--grey);
+  font-size: 1.6rem;
+}
+
+.title-and-checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.title-and-checkbox > h2 {
+  font-size: 1.8rem;
+}
+
+.dates {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-style: italic;
+}
+
+.status-and-priority {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.delete-task-btn {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: small;
+  margin-top: 8px;
+}
+
+
+.delete-task-btn {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: small;
+  margin-top: 8px;
+}
+
+/* Modal input and text style */
+#taskModal label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  color: #222;
+  font-size: 1.5rem;
+}
+
+#taskModal input[type="text"],
+#taskModal input[type="number"],
+#taskModal input[type="date"],
+#taskModal textarea {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  border: 1px solid #d1d1d1;
+  border-radius: 7px;
+  font-size: 1.5rem;
+  font-family: inherit;
+  background: #f7fbff;
+  color: #222;
+  box-sizing: border-box;
+}
+
+#taskModal textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+#taskModal button[type="submit"] {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+#taskModal button[type="submit"]:hover {
+  background: var(--secondary-color);
 }

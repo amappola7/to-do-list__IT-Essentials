@@ -1,39 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To - Do List</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="content">
-    <header class="header">
-      <img class="logo" src="./assets/to - do.png" alt="Decorative Image">
-      <nav class="nav-bar">
-        <ul class="nav-buttons">
-          <li class="nav-button"><a href="">To - Do List</a></li>
-          <li class="nav-button"><a href="">Create Task</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main-section">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To - Do List</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="content">
+      <header class="header">
+        <img class="logo" src="./assets/to-do.png" alt="Decorative Image" />
+        <nav class="nav-bar">
+          <ul class="nav-buttons">
+            <li class="nav-button"><a href="">To - Do List</a></li>
+            <li class="nav-button" id="createTaskBtn">
+              <a href="">Create Task</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main-section">
         <article class="tasks-banner">
           <p>TASKS</p>
         </article>
-        <article class="task-card">
-          <input type="checkbox">
-          <h2>Title</h2>
+        <article class="task-card" id="card1">
+          <span class="title-and-checkbox">
+            <input type="checkbox">
+            <h2>Buy groceries</h2>
+          </span>
+          <div class="dates">
+            <span><p>Start date: 01-06-2025</p></span>
+            <span><p>Estimated end date: 03-06-2024</p></span>
+          </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos maxime earum asperiores consequuntur doloremque ab eum corporis null.</p>
-          <span><p>Status: </p></span>
-          <span><p>Priority: </p></span>
-          <span><p>Start date: </p></span>
-          <span><p>Estimated end date: </p></span>
+          <div class="status-and-priority">
+            <p><strong>Status:</strong> Pending</p>
+            <p><strong>Priority:</strong> High</p>
+          </div>
         </article>
-    </main>
-  </div>
-</body>
+        <article class="task-card" id="card2">
+          <span class="title-and-checkbox">
+            <input type="checkbox">
+            <h2>Clean fridge</h2>
+          </span>
+          <div class="dates">
+            <span><p>Start date: 01-06-2025</p></span>
+            <span><p>Estimated end date: 03-06-2024</p></span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos maxime earum asperiores consequuntur doloremque ab eum corporis null.</p>
+          <div class="status-and-priority">
+            <p><strong>Status:</strong> Pending</p>
+            <p><strong>Priority:</strong> High</p>
+          </div>
+        </article>
+        <article class="task-card" id="card3">
+          <span class="title-and-checkbox">
+            <input type="checkbox">
+            <h2>Do homework</h2>
+          </span>
+          <div class="dates">
+            <span><p>Start date: 01-06-2025</p></span>
+            <span><p>Estimated end date: 03-06-2024</p></span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos maxime earum asperiores consequuntur doloremque ab eum corporis null.</p>
+          <div class="status-and-priority">
+            <p><strong>Status:</strong> Pending</p>
+            <p><strong>Priority:</strong> High</p>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- Modal for creating a new task -->
+    <div id="taskModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span id="closeModalBtn" class="close">X</span>
+        <h2>Create New Task</h2>
+        <form id="createTaskForm">
+          <label for="taskTitle">Title:</label>
+          <input
+            type="text"
+            id="taskTitle"
+            name="taskTitle"
+            required
+            style="width: 100%; margin-bottom: 10px"
+          />
+          <label for="taskDesc">Description:</label>
+          <textarea
+            id="taskDesc"
+            name="taskDesc"
+            style="width: 100%; margin-bottom: 10px"
+          ></textarea>
+          <label for="taskPriority">Priority:</label>
+          <input
+            type="number"
+            id="taskPriority"
+            name="taskPriority"
+            min="0"
+            max="5"
+            value="0"
+            style="width: 100%; margin-bottom: 10px"
+          />
+          <label for="taskStartDate">Start Date:</label>
+          <input
+            type="date"
+            id="taskStartDate"
+            name="taskStartDate"
+            required
+            style="width: 100%; margin-bottom: 10px"
+          />
+          <label for="taskEstimatedDate">Estimated End Date:</label>
+          <input
+            type="date"
+            id="taskEstimatedDate"
+            name="taskEstimatedDate"
+            required
+            style="width: 100%; margin-bottom: 10px"
+          />
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
