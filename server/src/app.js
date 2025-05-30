@@ -10,7 +10,7 @@ const app = express();
 const { swaggerUi, swaggerSpec } = require('./swagger');
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend's URL/port
+    origin: 'http://localhost:4200', // Replace with your frontend's URL/port
 }));
 
 app.use(bodyParser.json());
